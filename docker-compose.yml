@@ -1,11 +1,14 @@
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin:latest
-  container_name: phpmyadmin
-  restart: unless-stopped
-  environment:
-    PMA_HOST: cmcg3y9ts0021nxad410b1sg1
-    PMA_PORT: 3306
-    PMA_USER: db_sports
-    PMA_PASSWORD: db_sports_password
-  ports:
-    - "8080:80"
+version: "3.8"
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: cmcg3y9ts0021nxad410b1sg1
+      PMA_PORT: 3306
+      PMA_USER: db_sports
+      PMA_PASSWORD: db_sports_password
+    ports:
+      - "8080:80"
