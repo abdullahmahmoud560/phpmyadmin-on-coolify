@@ -12,3 +12,9 @@ services:
     labels:
       - "coolify.url=phpMyAdmin.quattrogcc.ae"
       - "coolify.port=80"
+    networks:
+      - coolify  # ← اضف دي
+
+networks:
+  coolify:
+    external: true
