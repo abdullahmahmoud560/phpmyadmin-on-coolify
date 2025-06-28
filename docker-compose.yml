@@ -3,10 +3,12 @@ version: "3.8"
 services:
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: phpmyadmin
+    container_name: cmcfoyn2a0017nxad23avu68l-phpmyadmin
     restart: always
     environment:
-      PMA_ARBITRARY: 1
+      PMA_HOST: cmcfm2a6r0003nxadea86nal8
+      PMA_USER: cmcfm2a6o0001adnx22xa37zj
+      PMA_PASSWORD: eZ0BJlZtZfkmnqS6ERfH4dJP
     labels:
       - "coolify.url=phpMyAdmin.quattrogcc.ae"
       - "coolify.port=80"
