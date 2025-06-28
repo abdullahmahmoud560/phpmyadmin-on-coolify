@@ -1,14 +1,41 @@
 version: "3.8"
 
 services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: db_sports
+      MYSQL_USER: db_sports
+      MYSQL_PASSWORD: db_sports_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - coolify
+    ports:
+      - "3306:3306" # لتمكين الاتصال الخارجي لو حبيت تستخدم MySQL Workbench مثلاً
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
     restart: unless-stopped
     environment:
-      PMA_HOST: cmcg3y9ts0021nxad410b1sg1
+      PMA_HOST: mariadb
       PMA_PORT: 3306
       PMA_USER: db_sports
       PMA_PASSWORD: db_sports_password
     ports:
       - "8080:80"
+    depends_on:
+      - mariadb
+    networks:
+      - coolify
+
+volumes:
+  db_data:
+
+networks:
+  coolify:
+    external: true
