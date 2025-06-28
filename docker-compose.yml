@@ -7,8 +7,12 @@ services:
     restart: always
     environment:
       PMA_HOST: cmcfm2a6r0003nxadea86nal8
-      PMA_USER: cmcfm2a6o0001adnx22xa37zj
-      PMA_PASSWORD: eZ0BJlZtZfkmnqS6ERfH4dJP
+      PMA_PORT: 3306
+      PMA_USER: cmcfm2a6o0001adnx22za37zj
+      PMA_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
+      PMA_DB: cmcfm2a6p0003adnx6i5jhui8
+    ports:
+      - "8080:80"   # هنا بنفتح البورت 8080 من VPS وربطه ببورت 80 داخل الحاوية phpMyAdmin
     labels:
       - "coolify.url=phpMyAdmin.quattrogcc.ae"
       - "coolify.port=80"
