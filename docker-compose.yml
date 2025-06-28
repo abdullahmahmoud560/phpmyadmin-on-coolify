@@ -3,7 +3,7 @@ version: "3.8"
 services:
   mariadb:
     image: mariadb:10.11
-    container_name: mariadb
+    container_name: cmcg4jh57002xnxadk7zp2p8x-mariadb
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root_password
