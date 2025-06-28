@@ -20,7 +20,7 @@ services:
     container_name: cmcfoyn2a0017nxad23avu68l-phpmyadmin
     restart: always
     environment:
-      PMA_HOST: mysql-db
+      PMA_HOST: cmcfm2a6r0003nxadea86nal8
       PMA_PORT: 3306
       PMA_USER: cmcfm2a6o0001adnx22za37zj
       PMA_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
