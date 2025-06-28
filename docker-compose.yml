@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       PMA_ARBITRARY: 1
+      PMA_HOST: cmcfm2a6r0003nxadea86nal8        # ← أضف هذا السطر
       PMA_USER: cmcfm2a6o0001adnx22xa37zj
       PMA_PASSWORD: eZ0BJlZtZfkmnqS6ERfH4dJP
     labels:
