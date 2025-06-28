@@ -3,13 +3,10 @@ version: "3.8"
 services:
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: cmcfnipsy0011nxadscdo3azd-phpmyadmin
+    container_name: phpmyadmin
     restart: always
     environment:
       PMA_ARBITRARY: 1
-      PMA_HOST: cmcfm2a6r0003nxadea86nal8        # ← أضف هذا السطر
-      PMA_USER: cmcfm2a6o0001adnx22xa37zj
-      PMA_PASSWORD: eZ0BJlZtZfkmnqS6ERfH4dJP
     labels:
       - "coolify.url=phpMyAdmin.quattrogcc.ae"
       - "coolify.port=80"
