@@ -12,10 +12,10 @@ services:
       MYSQL_PASSWORD: db_sports_password
     volumes:
       - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306" # لو هتربط من برة (مثلاً بـ MySQL Workbench)
     networks:
       - coolify
-    ports:
-      - "3306:3306" # لتمكين الاتصال الخارجي لو حبيت تستخدم MySQL Workbench مثلاً
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -27,7 +27,7 @@ services:
       PMA_USER: db_sports
       PMA_PASSWORD: db_sports_password
     ports:
-      - "8080:80"
+      - "8080:80"  # تفتح المتصفح على http://ip:8080
     depends_on:
       - mariadb
     networks:
