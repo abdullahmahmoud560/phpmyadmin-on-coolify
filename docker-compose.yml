@@ -1,23 +1,39 @@
 version: "3.8"
 
 services:
+  mysql-db:
+    image: bitnami/mysql:8.0
+    container_name: cmcfm2a6r0003nxadea86nal8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=eZ0BJ1ZtZfkmnqS6ERfH4dJP
+      - MYSQL_DATABASE=cmcfm2a6p0003adnx6i5jhui8
+      - MYSQL_USER=cmcfm2a6o0001adnx22za37zj
+      - MYSQL_PASSWORD=eZ0BJ1ZtZfkmnqS6ERfH4dJP
+    volumes:
+      - mysql_data:/bitnami/mysql
+    networks:
+      - coolify
+
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: cmcfoyn2a0017nxad23avu68l-phpmyadmin
     restart: always
     environment:
-      PMA_HOST: cmcfm2a6r0003nxadea86nal8
+      PMA_HOST: mysql-db
       PMA_PORT: 3306
       PMA_USER: cmcfm2a6o0001adnx22za37zj
       PMA_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
       PMA_DB: cmcfm2a6p0003adnx6i5jhui8
     ports:
-      - "8080:80"   # هنا بنفتح البورت 8080 من VPS وربطه ببورت 80 داخل الحاوية phpMyAdmin
-    labels:
-      - "coolify.url=phpMyAdmin.quattrogcc.ae"
-      - "coolify.port=80"
+      - "8080:80"
+    depends_on:
+      - mysql-db
     networks:
       - coolify
+
+volumes:
+  mysql_data:
 
 networks:
   coolify:
