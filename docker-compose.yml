@@ -22,7 +22,7 @@ services:
     container_name: phpmyadmin
     restart: unless-stopped
     environment:
-      PMA_HOST: cmcfm2a6r0003nxadea86nal8
+      PMA_HOST: mysql-db  # ✅ استخدم اسم الخدمة مش اسم الكونتينر
       PMA_USER: cmcfm2a6o0001adnx22za37zj
       PMA_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
     ports:
