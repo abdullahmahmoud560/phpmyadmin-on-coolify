@@ -1,40 +1,11 @@
-version: "3.8"
-
-services:
-  mysql-db:
-    image: bitnami/mysql:8.0
-    container_name: cmcfm2a6r0003nxadea86nal8
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
-      MYSQL_DATABASE: cmcfm2a6p0003adnx6i5jhui8
-      MYSQL_USER: cmcfm2a6o0001adnx22za37zj
-      MYSQL_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
-    volumes:
-      - db_data:/bitnami/mysql
-    ports:
-      - "3306:3306"
-    networks:
-      - coolify
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin
-    restart: unless-stopped
-    environment:
-      PMA_HOST: mysql-db  # ✅ استخدم اسم الخدمة مش اسم الكونتينر
-      PMA_USER: cmcfm2a6o0001adnx22za37zj
-      PMA_PASSWORD: eZ0BJ1ZtZfkmnqS6ERfH4dJP
-    ports:
-      - "8080:80"
-    depends_on:
-      - mysql-db
-    networks:
-      - coolify
-
-networks:
-  coolify:
-    external: true
-
-volumes:
-  db_data:
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin:latest
+  container_name: phpmyadmin
+  restart: unless-stopped
+  environment:
+    PMA_HOST: cmcg3y9ts0021nxad410b1sg1
+    PMA_PORT: 3306
+    PMA_USER: db_sports
+    PMA_PASSWORD: db_sports_password
+  ports:
+    - "8080:80"
