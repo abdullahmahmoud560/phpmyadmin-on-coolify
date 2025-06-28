@@ -22,7 +22,7 @@ services:
     container_name: phpmyadmin
     restart: unless-stopped
     environment:
-      PMA_HOST: mariadb
+      PMA_HOST: cmcg4jh57002xnxadk7zp2p8x-mariadb
       PMA_PORT: 3306
       PMA_USER: db_sports
       PMA_PASSWORD: db_sports_password
