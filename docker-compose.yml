@@ -5,6 +5,7 @@ services:
     image: mariadb:10.11
     restart: unless-stopped
     environment:
+      container_name: cmcg4jh57002xnxad7zp2p8x-mariadb 
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: db_sports
       MYSQL_USER: db_sports
