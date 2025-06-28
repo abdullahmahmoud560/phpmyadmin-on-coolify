@@ -3,7 +3,7 @@ version: "3.8"
 services:
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: phpmyadmin
+    container_name: cmcfnipsy0011nxadscdo3azd-phpmyadmin
     restart: always
     environment:
       PMA_HOST: cmcfm2a6r0003nxadea86nal8
